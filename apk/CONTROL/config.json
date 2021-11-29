@@ -1,0 +1,40 @@
+{
+    "general": {
+        "package": "tailscale",
+        "name": "TailScale",
+        "version": "1.18.1",
+        "depends": [],
+        "developer": "Tailscale",
+        "maintainer": "chilic",
+        "email": "me@iche.eu",
+        "website": "https://tailscale.com/",
+        "architecture": "x86-64",
+        "firmware": "4.0.0",
+        "model": [
+            "66xx",
+            "65xx",
+            "64xx",
+            "63xx",
+            "62xx",
+            "61xx"
+        ]
+    },
+    "register": {
+        "symbolic-link": {
+            "/bin": [
+                "tailscale",
+                "tailscaled"
+            ]
+        },
+        "share-folder": [],
+        "prerequisites": {
+            "enable-service": [],
+            "restart-service": []
+        },
+        "boot-priority": {
+            "start-order": 95,
+            "stop-order": 5
+        },
+        "port": [41641]
+    }
+}
