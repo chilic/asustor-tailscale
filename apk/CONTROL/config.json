@@ -2,7 +2,7 @@
     "general": {
         "package": "tailscale",
         "name": "TailScale",
-        "version": "1.18.1",
+        "version": "RELEASE_VERSION",
         "depends": [],
         "developer": "Tailscale",
         "maintainer": "chilic",
@@ -18,6 +18,18 @@
             "62xx",
             "61xx"
         ]
+    },
+    "adm-desktop": {
+        "app":  {
+            "type": "custom",
+            "protocol":"http",
+            "port": 39876,
+            "url": "/"
+        },
+        "privilege": {
+            "accessible": "administrators",
+            "customizable": true
+        }
     },
     "register": {
         "symbolic-link": {

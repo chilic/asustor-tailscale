@@ -8,7 +8,8 @@
 # Description:       tailscaled
 ### END INIT INFO
 
-SCRIPT=tailscaled
+DAEMON=tailscaled
+DAEMONOPTS="--state=/var/cache/tailscaled.state --port 41641"
 RUNAS=root
 
 PIDFILE=/var/run/tailscaled.pid
@@ -20,7 +21,7 @@ start() {
     return 1
   fi
   echo 'Starting service…' >&2
-  local CMD="$SCRIPT --state=tailscaled.state --port 41641 &> \"$LOGFILE\" & echo \$!"
+  local CMD="$DAEMON $DAEMONOPTS &> \"$LOGFILE\" & echo \$!"
   su -c "$CMD" $RUNAS > "$PIDFILE"
   echo 'Service started' >&2
 }
@@ -31,7 +32,6 @@ stop() {
     return 1
   fi
   echo 'Stopping service…' >&2
-  $SCRIPT --cleanup
   kill -15 $(cat "$PIDFILE") && rm -f "$PIDFILE"
   echo 'Service stopped' >&2
 }
