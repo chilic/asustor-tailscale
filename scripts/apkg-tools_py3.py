@@ -133,7 +133,7 @@ class Apkg:
 		_return = False
 		# here we're checking to see if the file is 'CONTROL' -
 		# a file don't want included in our tar archive.
-		if file.find('CONTROL') > -1:
+		if file.name.find('CONTROL') > -1:
 			_return = True
 		return _return
 
