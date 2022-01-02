@@ -1,13 +1,20 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+    tags:
+      - '*.*.*'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ./scripts/build.sh
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Build apk
+        env:
+        run: ./scripts/build.sh
 
-      # - uses: actions/upload-artifact@v2
-        # with:
-          # name: tailscale
-          # path: tailscale_
+      - uses: actions/upload-artifact@v2
+        with:
+          name: tailscale_${{env.RELEASE_VERSION}}_x86-64.apk
+          path: tailscale_${{env.RELEASE_VERSION}}_x86-64.apk
