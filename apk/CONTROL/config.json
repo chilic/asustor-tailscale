@@ -2,7 +2,7 @@
     "general": {
         "package": "tailscale",
         "name": "TailScale",
-        "version": "1.18.2",
+        "version": "RELEASE_VERSION",
         "depends": [],
         "developer": "Tailscale",
         "maintainer": "chilic",

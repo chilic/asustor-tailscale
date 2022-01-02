@@ -10,4 +10,3 @@ curl https://pkgs.tailscale.com/stable/${NAME}.tgz --output ${NAME}.tgz \
   && chmod +x apk/bin/tailscaled
 
 chmod +x ./apk/CONTROL/start-stop.sh
-sudo python ./scripts/apkg-tools_py3.py create apk
