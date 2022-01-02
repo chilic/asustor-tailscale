@@ -1,0 +1,3 @@
+apk/bin/*
+tailscale*.tgz
+tailscale_*_amd64/

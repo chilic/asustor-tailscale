@@ -9,7 +9,7 @@
 ### END INIT INFO
 
 DAEMON=tailscaled
-DAEMONOPTS="--state=tailscaled.state --port 41641"
+DAEMONOPTS="--state=/var/cache/tailscaled.state --port 41641"
 RUNAS=root
 
 PIDFILE=/var/run/tailscaled.pid
