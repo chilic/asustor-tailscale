@@ -1,0 +1,13 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ./scripts/build.sh
+
+      # - uses: actions/upload-artifact@v2
+        # with:
+          # name: tailscale
+          # path: tailscale_
