@@ -19,7 +19,7 @@ jobs:
           regex: false
 
       - run: ./scripts/build.sh
-      - run: sudo python ./scripts/apkg-tools_py3.py create apk
+      - run: sudo ./scripts/apkg-tools_py3.py create apk
 
       - uses: actions/upload-artifact@v2
         with:
