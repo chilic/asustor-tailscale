@@ -16,6 +16,7 @@ jobs:
         with:
           find: "RELEASE_VERSION"
           replace: ${{env.RELEASE_VERSION}}
+          include: "apk/CONTROL/config.json"
           regex: false
 
       - run: ./scripts/build.sh

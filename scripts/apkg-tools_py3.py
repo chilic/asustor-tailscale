@@ -130,11 +130,11 @@ class Apkg:
 
 	# return True for files we want to exclude
 	def __excluded_files(self, file):
-		_return = False
+		_return = file
 		# here we're checking to see if the file is 'CONTROL' -
 		# a file don't want included in our tar archive.
 		if file.name.find('CONTROL') > -1:
-			_return = True
+			_return = None
 		return _return
 
 	def __zip_archive(self, apk_file, file_list):
