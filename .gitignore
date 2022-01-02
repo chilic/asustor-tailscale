@@ -1,4 +1,5 @@
-apk/bin/*
+apk/bin/tailscale
+apk/bin/tailscaled
 tailscale*.tgz
 tailscale*.apk
 tailscale_*_amd64/
