@@ -150,7 +150,7 @@ class Apkg:
 		# create a tar archive of directory
 		with tarfile.open(tar_file, 'w:gz') as tar:
 			if os.path.basename(tar_file) == self.apk_file_contents['data']:
-				tar.add(path, exclude=self.__excluded_files)
+				tar.add(path, filter=self.__excluded_files)
 			else:
 				tar.add(path)
 
@@ -503,7 +503,7 @@ class Apkg:
 		icon_enable_file  = control_dir + '/icon-enable.png'
 		icon_disable_file = control_dir + '/icon-disable.png'
 		icon_file         = control_dir + '/' + self.apk_control_files['icon']
-		
+
 		os.unlink(icon_disable_file)
 		os.rename(icon_enable_file, icon_file)
 
