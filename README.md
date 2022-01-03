@@ -7,6 +7,6 @@ Tailscale application for ASUSTOR NAS
 - [x] Start-Stop script
 - [x] Base UI
 - [x] Build automation
-- [x] UI, Connect and login
-- [x] UI, Disconnect
+- [ ] UI, Connect and login
+- [ ] UI, Disconnect
 - [ ] Reconnect after reboot
